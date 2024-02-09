@@ -12,12 +12,12 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 // data source
-// let url = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson'
+// let url = ''
 
 
 // // empty arrays for storing data
-// magnitudes = [];
-// values = [];
+// array1 = [];
+// array2 = [];
 // coordinates = [];
 // info = [];
 
@@ -27,7 +27,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 //     L.geoJson(data);
 
 //     // push data to arrays
-//     values.push(data['features']);
+//     array2.push(data['features']);
 
 //     // use pullCoordinates function
 //     pullCoordinates();
@@ -38,13 +38,13 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // // separate the data into more specific arrays
 // function pullCoordinates() {
-// for (let i=0; i < values[0].length; i++) {
-//     coordinates.push(values[0][i]['geometry']['coordinates']);
+// for (let i=0; i < array2[0].length; i++) {
+//     coordinates.push(array2[0][i]['geometry']['coordinates']);
 
 
-//     magnitudes.push(values[0][i]['properties']['mag']);
+//     array1.push(array2[0][i]['properties']['mag']);
 
-//     info.push(values[0][i]['properties'])
+//     info.push(array2[0][i]['properties'])
     
 //     }
 //     // use addCircles function
@@ -63,7 +63,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // function addCircles() {
 //     for (let i = 0; i < coordinates.length; i++) {
 //         let circle = coordinates[i];
-//         let mag = magnitudes;
+//         let mag = array1;
 //         let name = info;
 //         let time = fixDate(name[i]['time']);
 
