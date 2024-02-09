@@ -97,11 +97,11 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 //         weight: 0.2,
 //         fillOpacity: 0.7})
 //         .bindPopup(`<h1>${name[i]['code']}</h1> <hr> 
-//         <h3>Magnitude: ${name[i]['mag']}</h3> 
-//         <h3>Location: ${name[i]['place']}</h3> 
-//         <h3>Time: ${name[i]['time']}</h3> 
-//         <h3>Type: ${name[i]['type']}</h3> 
-//         <h3>Time: ${time}</h3>`).addTo(myMap);
+//         <h3>Thing1: ${name[i]['mag']}</h3> 
+//         <h3>Thing2: ${name[i]['place']}</h3> 
+//         <h3>Thing3: ${name[i]['time']}</h3> 
+//         <h3>Thing4: ${name[i]['type']}</h3> 
+//         <h3>Thing5: ${time}</h3>`).addTo(myMap);
 //     }
 // }
 
