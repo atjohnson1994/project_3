@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Project 3</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+      <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""></script>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin="" />
+
+  <!-- Our CSS -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+
+ <!-- Marker cluster JavaScript code -->
+ <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
+
+ <!-- Marker cluster CSS -->
+ <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
+ <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
+
+
+
+  </head>
+  <body>
+ 
+  <!-- The div that holds our map -->
+  <div id="map"></div>
+
+
+
+  <!-- D3 JavaScript -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+
+
+    <script type="text/javascript" src="../data.js"></script>
+    <script type="text/javascript" src="java.js"></script>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 jumbotron text-center">
+          <h1>Fortune 500 Companies By Year</h1>
+          <p>Select a year</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2">
+          <div class="well">
+            <h5>Year</h5>
+            <select id="selDataset" onchange="optionChanged(this.value)">
+              <option value="all">Select</option>
+      <option value="2015">2015</option>
+      <option value="2016">2016</option>
+      <option value="2017">2017</option>
+      <option value="2018">2018</option>
+      <option value="2019">2019</option>
+      <option value="2020">2020</option>
+      <option value="2021">2021</option>
+      <option value="2022">2022</option>
+      <option value="2023">2023</option>
+            </select>
+          </div>
+
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Info</h3></div>
+            <div id="sample-metadata" class="panel-body"></div>
+            <div id="id"></div>
+            <div id="ethnicity"></div>
+            <div id="gender"></div>
+            <div id="age"></div>
+            <div id="location"></div>
+            <div id="bbtype"></div>
+            <div id="wfreq"></div>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div id="bar"></div>
+        </div>
+        <div class="col-md-5">
+          <div id="gauge"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div id="bubble"></div>
+
+        </div>
+      </div>
+    </div>
+  
+    <!-- <p class='retailing' style="background-color: red;">Retailing</p>
+    <p class='energy'>Energy</p>
+    <p class='financals'>Financals</p>
+    <p class='technoloy'>Technoloy</p>
+    <p class='motorVehiclesParts'>Motor Vehicles & Parts</p>
+    <p class='foodDrugStores'>Food & Drug Stores</p>
+    <p class='wholesalers'>Wholesalers</p>
+    <p class='telecommunications'>Telecommunications</p>
+    <p class='healthCare'>Health Care</p>
+    <p class='aerospaceDefense'>Aerospace & Defense</p>
+    <p class='householdProducts'>Household Products</p>
+    <p class='foodBeveragesTobacco'>Food, Beverages & Tobacco</p>
+    <p class='transportation'>Transportation</p>
+    <p class='chemicals'>Chemicals</p>
+    <p class='industrials'>Industrials</p>
+    <p class='media'>Media</p>
+    <p class='apparel'>Apparel</p>
+    <p class='hotelsRestaurantsLeisure'>Hotels, Restaurants & Leisure</p>
+    <p class='materials'>Materials</p>
+    <p class='engineeringConstruction'>Engineering & Construction</p>
+    <p class='businessServices'>Business Services</p> -->
+
+
+    <table>
+      <tr>
+        <th>Color</th>
+        <th>Sector</th>
+        <th>%</th>
+        <th>Total</th>
+      </tr>
+      <tr>
+        <td style="background-color: red;">   </td>
+        <td class='retailing'>Retailing</td>
+        <td class="retailingPercentage"></td>
+        <td class="retailingRevenue"></td>
+      </tr>
+      <tr>
+        <td style="background-color: chartreuse;">   </td>
+        <td class='energy'>Energy</td>
+        <td class="energyPercentage"></td>
+        <td class="energyRevenue"></td>
+        
+      </tr>
+      <tr>
+        <td style="background-color: orange;">   </td>
+        <td class='financials'>Financials</td>
+        <td class="financialsPercentage"></td>
+        <td class="financialsRevenue"></td>
+        
+      </tr>
+      <tr>
+        <td style="background-color: darkmagenta;">   </td>
+        <td class='technology'>Technology</td>
+        <td class="technologyPercentage"></td>
+        <td class="technologyRevenue"></td>
+        
+      </tr>
+      <tr>
+        <td style="background-color: burlywood;">   </td>
+        <td class='motorVehiclesParts'>MotorVehiclesParts</td>
+        <td class="motorVehiclesPartsPercentage"></td>
+        <td class="motorVehiclesPartsRevenue"></td>
+        
+      </tr>
+      <tr>
+        <td style="background-color: darkcyan;">   </td>
+        <td class='foodDrugStores'>FoodDrugStores</td>
+        <td class="foodDrugStoresPercentage"></td>
+        <td class="foodDrugStoresRevenue"></td>
+        
+      </tr>
+      <tr>
+        <td style="background-color: cadetblue;">   </td>
+        <td class='wholesalers'>Wholesalers</td>
+        <td class="wholesalersPercentage"></td>
+        <td class="wholesalersRevenue"></td>
+        
+      </tr>
+      <tr>
+        <td style="background-color: gold;">   </td>
+        <td class='telecommunications'>Telecommunications</td>
+        <td class="telecommunicationsPercentage"></td>
+        <td class="telecommunicationsRevenue"></td>
+        
+      </tr>
+      <tr>
+        <td style="background-color: crimson;">   </td>
+        <td class='healthCare'>HealthCare</td>
+        <td class="healthCarePercentage"></td>
+        <td class="healthCareRevenue"></td>
+        
+      </tr>
+      <tr>
+        <td style="background-color: aliceblue;">   </td>
+        <td class='aerospaceDefense'>AerospaceDefense</td>
+        <td class="aerospaceDefensePercentage"></td>
+        <td class="aerospaceDefenseRevenue"></td>
+        
+      </tr>
+      <tr>
+        <td style="background-color: beige;">   </td>
+        <td class='householdProducts'>HouseholdProducts</td>
+        <td class="householdProductsPercentage"></td>
+        <td class="householdProductsRevenue"></td>        
+      </tr>
+      <tr>
+        <td style="background-color: darkolivegreen;">   </td>
+        <td class='foodBeveragesTobacco'>FoodBeveragesTobacco</td>
+        <td class="foodBeveragesTobaccoPercentage"></td>
+        <td class="foodBeveragesTobaccoRevenue"></td>       
+      </tr>
+      <tr>
+        <td style="background-color: darkslategray;">   </td>
+        <td class='transportation'>Transportation</td>
+        <td class="transportationPercentage"></td>
+        <td class="transportationRevenue"></td>    
+      </tr>
+      <tr>
+        <td style="background-color: orangered;">   </td>
+        <td class='chemicals'>Chemicals</td>
+        <td class="chemicalsPercentage"></td>
+        <td class="chemicalsRevenue"></td>       
+      </tr>
+      <tr>
+        <td style="background-color: silver;">   </td>
+        <td class='industrials'>Industrials</td>
+        <td class="industrialsPercentage"></td>
+        <td class="industrialsRevenue"></td>        
+      </tr>
+      <tr>
+        <td style="background-color: plum;">   </td>
+        <td class='media'>Media</td>
+        <td class="mediaPercentage"></td>
+        <td class="mediaRevenue"></td>        
+      </tr>
+      <tr>
+        <td style="background-color: salmon;">   </td>
+        <td class='apparel'>Apparel</td>
+        <td class="apparelPercentage"></td>
+        <td class="apparelRevenue"></td>       
+      </tr>
+      <tr>
+        <td style="background-color: teal;">   </td>
+        <td class='hotelsRestaurantsLeisure'>HotelsRestaurantsLeisure</td>
+        <td class="hotelsRestaurantsLeisurePercentage"></td>
+        <td class="hotelsRestaurantsLeisureRevenue"></td>       
+      </tr>
+      <tr>
+        <td style="background-color: black;">   </td>
+        <td class='materials'>Materials</td>
+        <td class="materialsPercentage"></td>
+        <td class="materialsRevenue"></td>
+      </tr>
+      <tr>
+        <td style="background-color: rosybrown;">   </td>
+        <td class='engineeringConstruction'>EngineeringConstruction</td>
+        <td class="engineeringConstructionPercentage"></td>
+        <td class="engineeringConstructionRevenue"></td>
+      </tr>
+      <tr>
+        <td style="background-color: palegreen;">   </td>
+        <td class='businessServices'>BusinessServices</td>
+        <td class="businessServicesPercentage"></td>
+        <td class="businessServicesRevenue"></td>
+      </tr>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
