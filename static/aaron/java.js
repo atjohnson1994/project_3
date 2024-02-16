@@ -445,147 +445,147 @@ function addCircles(yearData) {
             let sum = 0;
             let total_sum = 0;
             retailingRevenue.forEach((el) => sum += el);
-            document.getElementById('retailingRevenue').innerHTML = sum
+            document.getElementById('retailingRevenue').innerHTML = '$' + sum
             retailingSum = sum;
             total_sum = total_sum + sum;
 
             // energy
             sum = 0;
             energyRevenue.forEach((el) => sum += el);
-            document.getElementById('energyRevenue').innerHTML = sum
+            document.getElementById('energyRevenue').innerHTML = '$' + sum
             energySum = sum;
             total_sum = total_sum + sum;
 
             // financials
             sum = 0;
             financialsRevenue.forEach((el) => sum += el);
-            document.getElementById('financialsRevenue').innerHTML = sum
+            document.getElementById('financialsRevenue').innerHTML = '$' + sum
             financialsSum = sum;
             total_sum = total_sum + sum;
 
             // technology
             sum = 0;
             technologyRevenue.forEach((el) => sum += el);
-            document.getElementById('technologyRevenue').innerHTML = sum
+            document.getElementById('technologyRevenue').innerHTML = '$' + sum
             technologySum = sum;
             total_sum = total_sum + sum;
 
             // motorVehiclesParts
             sum = 0;
             motorVehiclesPartsRevenue.forEach((el) => sum += el);
-            document.getElementById('motorVehiclesPartsRevenue').innerHTML = sum
+            document.getElementById('motorVehiclesPartsRevenue').innerHTML = '$' + sum
             motorVehiclesPartsSum = sum;
             total_sum = total_sum + sum;
 
             // foodDrugStores
             sum = 0;
             foodDrugStoresRevenue.forEach((el) => sum += el);
-            document.getElementById('foodDrugStoresRevenue').innerHTML = sum
+            document.getElementById('foodDrugStoresRevenue').innerHTML = '$' + sum
             foodDrugStoresSum = sum;
             total_sum = total_sum + sum;
 
             // wholesalers
             sum = 0;
             wholesalersRevenue.forEach((el) => sum += el);
-            document.getElementById('wholesalersRevenue').innerHTML = sum
+            document.getElementById('wholesalersRevenue').innerHTML = '$' + sum
             wholesalersSum = sum;
             total_sum = total_sum + sum;
 
             // telecommunications
             sum = 0;
             telecommunicationsRevenue.forEach((el) => sum += el);
-            document.getElementById('telecommunicationsRevenue').innerHTML = sum
+            document.getElementById('telecommunicationsRevenue').innerHTML = '$' + sum
             telecommunicationsSum = sum;
             total_sum = total_sum + sum;
 
             // healthCare
             sum = 0;
             healthCareRevenue.forEach((el) => sum += el);
-            document.getElementById('healthCareRevenue').innerHTML = sum
+            document.getElementById('healthCareRevenue').innerHTML = '$' + sum
             healthCareSum = sum;
             total_sum = total_sum + sum;
 
             // aerospaceDefense
             sum = 0;
             aerospaceDefenseRevenue.forEach((el) => sum += el);
-            document.getElementById('aerospaceDefenseRevenue').innerHTML = sum
+            document.getElementById('aerospaceDefenseRevenue').innerHTML = '$' + sum
             aerospaceDefenseSum = sum;
             total_sum = total_sum + sum;
 
             // householdProducts
             sum = 0;
             householdProductsRevenue.forEach((el) => sum += el);
-            document.getElementById('householdProductsRevenue').innerHTML = sum
+            document.getElementById('householdProductsRevenue').innerHTML = '$' + sum
             householdProductsSum = sum;
             total_sum = total_sum + sum;
 
             // foodBeveragesTobacco
             sum = 0;
             foodBeveragesTobaccoRevenue.forEach((el) => sum += el);
-            document.getElementById('foodBeveragesTobaccoRevenue').innerHTML = sum
+            document.getElementById('foodBeveragesTobaccoRevenue').innerHTML = '$' + sum
             foodBeveragesTobaccoSum = sum;
             total_sum = total_sum + sum;
 
             // transportation
             sum = 0;
             transportationRevenue.forEach((el) => sum += el);
-            document.getElementById('transportationRevenue').innerHTML = sum
+            document.getElementById('transportationRevenue').innerHTML = '$' + sum
             transportationSum = sum;
             total_sum = total_sum + sum;
 
             // chemicals
             sum = 0;
             chemicalsRevenue.forEach((el) => sum += el);
-            document.getElementById('chemicalsRevenue').innerHTML = sum
+            document.getElementById('chemicalsRevenue').innerHTML = '$' + sum
             chemicalsSum = sum;
             total_sum = total_sum + sum;
 
             // industrials
             sum = 0;
             industrialsRevenue.forEach((el) => sum += el);
-            document.getElementById('industrialsRevenue').innerHTML = sum
+            document.getElementById('industrialsRevenue').innerHTML = '$' + sum
             industrialsSum = sum;
             total_sum = total_sum + sum;
 
             // media
             sum = 0;
             mediaRevenue.forEach((el) => sum += el);
-            document.getElementById('mediaRevenue').innerHTML = sum
+            document.getElementById('mediaRevenue').innerHTML = '$' + sum
             mediaSum = sum;
             total_sum = total_sum + sum;
 
             // apparel
             sum = 0;
             apparelRevenue.forEach((el) => sum += el);
-            document.getElementById('apparelRevenue').innerHTML = sum
+            document.getElementById('apparelRevenue').innerHTML = '$' + sum
             apparelSum = sum;
             total_sum = total_sum + sum;
 
             // hotelsRestaurantsLeisure
             sum = 0;
             hotelsRestaurantsLeisureRevenue.forEach((el) => sum += el);
-            document.getElementById('hotelsRestaurantsLeisureRevenue').innerHTML = sum
+            document.getElementById('hotelsRestaurantsLeisureRevenue').innerHTML = '$' + sum
             hotelsRestaurantsLeisureSum = sum;
             total_sum = total_sum + sum;
 
             // materials
             sum = 0;
             materialsRevenue.forEach((el) => sum += el);
-            document.getElementById('materialsRevenue').innerHTML = sum
+            document.getElementById('materialsRevenue').innerHTML = '$' + sum
             materialsSum = sum;
             total_sum = total_sum + sum;
 
             // engineeringConstruction
             sum = 0;
             engineeringConstructionRevenue.forEach((el) => sum += el);
-            document.getElementById('engineeringConstructionRevenue').innerHTML = sum
+            document.getElementById('engineeringConstructionRevenue').innerHTML = '$' + sum
             engineeringConstructionSum = sum;
             total_sum = total_sum + sum;
 
             // businessServices
             sum = 0;
             businessServicesRevenue.forEach((el) => sum += el);
-            document.getElementById('businessServicesRevenue').innerHTML = sum
+            document.getElementById('businessServicesRevenue').innerHTML = '$' + sum
             businessServicesSum = sum;
             total_sum = total_sum + sum;
 
@@ -826,55 +826,4 @@ function rankings(arr){
   rankings([10, 5, 20]); // [2, 3, 1]
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function stats(yearData) {
-
-    // retailingRevenue = [];
-    // energyRevenue = [];
-    // financialsRevenue = [];
-    // technologyRevenue = [];
-    // motorVehiclesPartsRevenue = [];
-    // foodDrugStoresRevenue = [];
-    // wholesalersRevenue = [];
-    // telecommunicationsRevenue = [];
-    // healthCareRevenue = [];
-    // aerospaceDefenseRevenue = [];
-    // householdProductsRevenue = [];
-    // foodBeveragesTobaccoRevenue = [];
-    // transportationRevenue = [];
-    // chemicalsRevenue = [];
-    // industrialsRevenue = [];
-    // mediaRevenue = [];
-    // apparelRevenue = [];
-    // hotelsRestaurantLeisureRevenue = [];
-    // materialsRevenue = [];
-    // engineeringConstructionRevenue = [];
-    // businessSericesRevenue = [];
-
-    for (i=0; i<yearData.length; i++) {
-        
-    }
-}
-
-
-
-
-
-
-
-
-function updateStats() {}
 
