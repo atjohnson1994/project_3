@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,3 +12,115 @@
     <script type="text/javascript" src="java.js"></script>
   </body>
 </html>
+=======
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Project 3</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+
+  <!-- Our CSS -->
+  <link rel="stylesheet" type="text/css" href="static/style.css">
+
+
+
+
+
+  </head>
+  <body>
+ 
+
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""></script>
+
+  <!-- D3 JavaScript -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+
+
+    <script type="text/javascript" src="static/data.js"></script>
+    <script type="text/javascript" src="static/java.js"></script>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 jumbotron text-center">
+          <h1>Fortune 500 Statistics</h1>
+          <p>This project utilizes the data released from the Fortune 500 List between 2015 and 2023.</p>
+          <p>Make a selection to navigate the page.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <div class="well">
+            <h5>Visualization</h5>
+            <select id="selDataset" onchange="location = this.options[this.selectedIndex].value;">
+              <option value="index.html">Home</option>
+      <option value="static/aaron/aaron.html">Aaron</option>
+      <option value="tyler.html">Tyler</option>
+      <option value="tyson.html">Tyson</option>
+      <option value="graciela.html">Graciela</option>
+            </select>
+          </div>
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Info</h3></div>
+            <div id="sample-metadata" class="panel-body"></div>
+            <div id="id"></div>
+            <div id="ethnicity"></div>
+            <div id="gender"></div>
+            <div id="age"></div>
+            <div id="location"></div>
+            <div id="bbtype"></div>
+            <div id="wfreq"></div>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div id="bar"></div>
+        </div>
+        <div class="col-md-5">
+          <div id="gauge"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div id="bubble"></div>
+
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
+>>>>>>> 9660175c11e20f98897ed437e0e21a3a4e74398e
