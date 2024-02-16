@@ -9,3 +9,13 @@ body,
 html {
   height: 70%;
 }
+table, th, td {
+  border: 1px solid;
+  border-collapse: collapse;
+  width: 70%;
+  text-align: center;
+  padding: 3px;
+  background-color: rgb(243, 244, 245);
+  margin-left: auto;
+  margin-right: auto;
+}

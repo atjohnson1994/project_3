@@ -270,107 +270,107 @@ function addCircles(yearData) {
 
             if (yearData[i]['sector'] == 'Retailing') {
                 color = 'red';
-                retailingRevenue.push(yearData[i]['revenue_millions']);
+                retailingRevenue.push(yearData[i]['revenue_billions']);
                 retailingWinner.push(yearData[i]['name']);
             }
             else if (yearData[i]['sector'] == 'Energy') {
                 color = 'chartreuse';
-                energyRevenue.push(yearData[i]['revenue_millions']);
+                energyRevenue.push(yearData[i]['revenue_billions']);
                 energyWinner.push(yearData[i]['name']);
             }
             else if (yearData[i]['sector'] == 'Financials') {
                 color = 'orange';
-                financialsRevenue.push(yearData[i]['revenue_millions']);
+                financialsRevenue.push(yearData[i]['revenue_billions']);
                 financialsWinner.push(yearData[i]['name']);
             }
             else if (yearData[i]['sector'] == 'Technology') {
                 color = 'darkMagenta';
-                technologyRevenue.push(yearData[i]['revenue_millions']);
+                technologyRevenue.push(yearData[i]['revenue_billions']);
                 technologyWinner.push(yearData[i]['name']);
             }
             else if (yearData[i]['sector'] == 'Motor Vehicles & Parts') {
                 color = 'burlyWood';
-                motorVehiclesPartsRevenue.push(yearData[i]['revenue_millions']);
+                motorVehiclesPartsRevenue.push(yearData[i]['revenue_billions']);
                 motorVehiclesPartsWinner.push(yearData[i]['name']);  
             }
             else if (yearData[i]['sector'] == 'Food & Drug Stores') {
                 color = 'darkCyan';
-                foodDrugStoresRevenue.push(yearData[i]['revenue_millions']);
+                foodDrugStoresRevenue.push(yearData[i]['revenue_billions']);
                 foodDrugStoresWinner.push(yearData[i]['name']);
             }
             else if (yearData[i]['sector'] == 'Wholesalers') {
                 color = 'cadetBlue';
-                wholesalersRevenue.push(yearData[i]['revenue_millions']);
+                wholesalersRevenue.push(yearData[i]['revenue_billions']);
                 wholesalersWinner.push(yearData[i]['name']);
             }
             else if (yearData[i]['sector'] == 'Telecommunications') {
                 color = 'gold';
-                telecommunicationsRevenue.push(yearData[i]['revenue_millions']);
+                telecommunicationsRevenue.push(yearData[i]['revenue_billions']);
                 telecommunicationsWinner.push(yearData[i]['name']);
             }
             else if (yearData[i]['sector'] == 'Health Care') {
                 color = 'crimson';
-                healthCareRevenue.push(yearData[i]['revenue_millions']);
+                healthCareRevenue.push(yearData[i]['revenue_billions']);
                 healthCareWinner.push(yearData[i]['name']);
             }
             else if (yearData[i]['sector'] == 'Aerospace & Defense') {
                 color = 'aliceBlue';
-                aerospaceDefenseRevenue.push(yearData[i]['revenue_millions']);
+                aerospaceDefenseRevenue.push(yearData[i]['revenue_billions']);
                 aerospaceDefenseWinner.push(yearData[i]['name']);
             }
             else if (yearData[i]['sector'] == 'Household Products') {
                 color = 'beige';
-                householdProductsRevenue.push(yearData[i]['revenue_millions']);
+                householdProductsRevenue.push(yearData[i]['revenue_billions']);
                 householdProductsWinner.push(yearData[i]['name']);
             }
             else if (yearData[i]['sector'] == 'Food, Beverages & Tobacco') {
                 color = 'darkOliveGreen';
-                foodBeveragesTobaccoRevenue.push(yearData[i]['revenue_millions']);
+                foodBeveragesTobaccoRevenue.push(yearData[i]['revenue_billions']);
                 foodBeveragesTobaccoWinner.push(yearData[i]['name']);
             }
             else if (yearData[i]['sector'] == 'Transportation') {
                 color = 'darkSlateGray';
-                transportationRevenue.push(yearData[i]['revenue_millions']);
+                transportationRevenue.push(yearData[i]['revenue_billions']);
                 transportationWinner.push(yearData[i]['name']);
             }
             else if (yearData[i]['sector'] == 'Chemicals') {
                 color = 'orangeRed';
-                chemicalsRevenue.push(yearData[i]['revenue_millions']);
+                chemicalsRevenue.push(yearData[i]['revenue_billions']);
                 chemicalsWinner.push(yearData[i]['name']);
             }
             else if (yearData[i]['sector'] == 'Industrials') {
                 color = 'silver';
-                industrialsRevenue.push(yearData[i]['revenue_millions']);
+                industrialsRevenue.push(yearData[i]['revenue_billions']);
                 industrialsWinner.push(yearData[i]['name']);
             }
             else if (yearData[i]['sector'] == 'Media') {
                 color = 'plum';
-                mediaRevenue.push(yearData[i]['revenue_millions']);
+                mediaRevenue.push(yearData[i]['revenue_billions']);
                 mediaWinner.push(yearData[i]['name']);
             }
             else if (yearData[i]['sector'] == 'Apparel') {
                 color = 'salmon';
-                apparelRevenue.push(yearData[i]['revenue_millions']);
+                apparelRevenue.push(yearData[i]['revenue_billions']);
                 apparelWinner.push(yearData[i]['name']);
             }
             else if (yearData[i]['sector'] == 'Hotels, Restaurants & Leisure') {
                 color = 'teal';
-                hotelsRestaurantsLeisureRevenue.push(yearData[i]['revenue_millions']);
+                hotelsRestaurantsLeisureRevenue.push(yearData[i]['revenue_billions']);
                 hotelsRestaurantsLeisureWinner.push(yearData[i]['name']);
             }
             else if (yearData[i]['sector'] == 'Materials') {
                 color = 'black';
-                materialsRevenue.push(yearData[i]['revenue_millions']);
+                materialsRevenue.push(yearData[i]['revenue_billions']);
                 materialsWinner.push(yearData[i]['name']);
             }
             else if (yearData[i]['sector'] == 'Engineering & Construction') {
                 color = 'rosyBrown';
-                engineeringConstructionRevenue.push(yearData[i]['revenue_millions']);
+                engineeringConstructionRevenue.push(yearData[i]['revenue_billions']);
                 engineeringConstructionWinner.push(yearData[i]['name']);
             }
             else if (yearData[i]['sector'] == 'Business Services') {
                 color = 'paleGreen';
-                businessServicesRevenue.push(yearData[i]['revenue_millions']);
+                businessServicesRevenue.push(yearData[i]['revenue_billions']);
                 businessServicesWinner.push(yearData[i]['name']);
             }
             else {
@@ -445,147 +445,147 @@ function addCircles(yearData) {
             let sum = 0;
             let total_sum = 0;
             retailingRevenue.forEach((el) => sum += el);
-            document.getElementById('retailingRevenue').innerHTML = '$' + sum
+            document.getElementById('retailingRevenue').innerHTML = '$' + Math.round(sum)
             retailingSum = sum;
             total_sum = total_sum + sum;
 
             // energy
             sum = 0;
             energyRevenue.forEach((el) => sum += el);
-            document.getElementById('energyRevenue').innerHTML = '$' + sum
+            document.getElementById('energyRevenue').innerHTML = '$' + Math.round(sum)
             energySum = sum;
             total_sum = total_sum + sum;
 
             // financials
             sum = 0;
             financialsRevenue.forEach((el) => sum += el);
-            document.getElementById('financialsRevenue').innerHTML = '$' + sum
+            document.getElementById('financialsRevenue').innerHTML = '$' + Math.round(sum)
             financialsSum = sum;
             total_sum = total_sum + sum;
 
             // technology
             sum = 0;
             technologyRevenue.forEach((el) => sum += el);
-            document.getElementById('technologyRevenue').innerHTML = '$' + sum
+            document.getElementById('technologyRevenue').innerHTML = '$' + Math.round(sum)
             technologySum = sum;
             total_sum = total_sum + sum;
 
             // motorVehiclesParts
             sum = 0;
             motorVehiclesPartsRevenue.forEach((el) => sum += el);
-            document.getElementById('motorVehiclesPartsRevenue').innerHTML = '$' + sum
+            document.getElementById('motorVehiclesPartsRevenue').innerHTML = '$' + Math.round(sum)
             motorVehiclesPartsSum = sum;
             total_sum = total_sum + sum;
 
             // foodDrugStores
             sum = 0;
             foodDrugStoresRevenue.forEach((el) => sum += el);
-            document.getElementById('foodDrugStoresRevenue').innerHTML = '$' + sum
+            document.getElementById('foodDrugStoresRevenue').innerHTML = '$' + Math.round(sum)
             foodDrugStoresSum = sum;
             total_sum = total_sum + sum;
 
             // wholesalers
             sum = 0;
             wholesalersRevenue.forEach((el) => sum += el);
-            document.getElementById('wholesalersRevenue').innerHTML = '$' + sum
+            document.getElementById('wholesalersRevenue').innerHTML = '$' + Math.round(sum)
             wholesalersSum = sum;
             total_sum = total_sum + sum;
 
             // telecommunications
             sum = 0;
             telecommunicationsRevenue.forEach((el) => sum += el);
-            document.getElementById('telecommunicationsRevenue').innerHTML = '$' + sum
+            document.getElementById('telecommunicationsRevenue').innerHTML = '$' + Math.round(sum)
             telecommunicationsSum = sum;
             total_sum = total_sum + sum;
 
             // healthCare
             sum = 0;
             healthCareRevenue.forEach((el) => sum += el);
-            document.getElementById('healthCareRevenue').innerHTML = '$' + sum
+            document.getElementById('healthCareRevenue').innerHTML = '$' + Math.round(sum)
             healthCareSum = sum;
             total_sum = total_sum + sum;
 
             // aerospaceDefense
             sum = 0;
             aerospaceDefenseRevenue.forEach((el) => sum += el);
-            document.getElementById('aerospaceDefenseRevenue').innerHTML = '$' + sum
+            document.getElementById('aerospaceDefenseRevenue').innerHTML = '$' + Math.round(sum)
             aerospaceDefenseSum = sum;
             total_sum = total_sum + sum;
 
             // householdProducts
             sum = 0;
             householdProductsRevenue.forEach((el) => sum += el);
-            document.getElementById('householdProductsRevenue').innerHTML = '$' + sum
+            document.getElementById('householdProductsRevenue').innerHTML = '$' + Math.round(sum)
             householdProductsSum = sum;
             total_sum = total_sum + sum;
 
             // foodBeveragesTobacco
             sum = 0;
             foodBeveragesTobaccoRevenue.forEach((el) => sum += el);
-            document.getElementById('foodBeveragesTobaccoRevenue').innerHTML = '$' + sum
+            document.getElementById('foodBeveragesTobaccoRevenue').innerHTML = '$' + Math.round(sum)
             foodBeveragesTobaccoSum = sum;
             total_sum = total_sum + sum;
 
             // transportation
             sum = 0;
             transportationRevenue.forEach((el) => sum += el);
-            document.getElementById('transportationRevenue').innerHTML = '$' + sum
+            document.getElementById('transportationRevenue').innerHTML = '$' + Math.round(sum)
             transportationSum = sum;
             total_sum = total_sum + sum;
 
             // chemicals
             sum = 0;
             chemicalsRevenue.forEach((el) => sum += el);
-            document.getElementById('chemicalsRevenue').innerHTML = '$' + sum
+            document.getElementById('chemicalsRevenue').innerHTML = '$' + Math.round(sum)
             chemicalsSum = sum;
             total_sum = total_sum + sum;
 
             // industrials
             sum = 0;
             industrialsRevenue.forEach((el) => sum += el);
-            document.getElementById('industrialsRevenue').innerHTML = '$' + sum
+            document.getElementById('industrialsRevenue').innerHTML = '$' + Math.round(sum)
             industrialsSum = sum;
             total_sum = total_sum + sum;
 
             // media
             sum = 0;
             mediaRevenue.forEach((el) => sum += el);
-            document.getElementById('mediaRevenue').innerHTML = '$' + sum
+            document.getElementById('mediaRevenue').innerHTML = '$' + Math.round(sum)
             mediaSum = sum;
             total_sum = total_sum + sum;
 
             // apparel
             sum = 0;
             apparelRevenue.forEach((el) => sum += el);
-            document.getElementById('apparelRevenue').innerHTML = '$' + sum
+            document.getElementById('apparelRevenue').innerHTML = '$' + Math.round(sum)
             apparelSum = sum;
             total_sum = total_sum + sum;
 
             // hotelsRestaurantsLeisure
             sum = 0;
             hotelsRestaurantsLeisureRevenue.forEach((el) => sum += el);
-            document.getElementById('hotelsRestaurantsLeisureRevenue').innerHTML = '$' + sum
+            document.getElementById('hotelsRestaurantsLeisureRevenue').innerHTML = '$' + Math.round(sum)
             hotelsRestaurantsLeisureSum = sum;
             total_sum = total_sum + sum;
 
             // materials
             sum = 0;
             materialsRevenue.forEach((el) => sum += el);
-            document.getElementById('materialsRevenue').innerHTML = '$' + sum
+            document.getElementById('materialsRevenue').innerHTML = '$' + Math.round(sum)
             materialsSum = sum;
             total_sum = total_sum + sum;
 
             // engineeringConstruction
             sum = 0;
             engineeringConstructionRevenue.forEach((el) => sum += el);
-            document.getElementById('engineeringConstructionRevenue').innerHTML = '$' + sum
+            document.getElementById('engineeringConstructionRevenue').innerHTML = '$' + Math.round(sum)
             engineeringConstructionSum = sum;
             total_sum = total_sum + sum;
 
             // businessServices
             sum = 0;
             businessServicesRevenue.forEach((el) => sum += el);
-            document.getElementById('businessServicesRevenue').innerHTML = '$' + sum
+            document.getElementById('businessServicesRevenue').innerHTML = '$' + Math.round(sum)
             businessServicesSum = sum;
             total_sum = total_sum + sum;
 
@@ -772,7 +772,7 @@ document.getElementById('businessServicesWinner').innerHTML = businessServicesWi
             color: 'black',
         fillColor: color,
         weight: 0.2,
-        fillOpacity: 0.3}))
+        fillOpacity: 0.7}))
 
         
 
