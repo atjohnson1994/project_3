@@ -27,8 +27,8 @@ console.log(year);
 
 let layout = {
     title: "Fortune 500 Revenues", 
-    width: 1850,  
-    height: 650,
+    width: 2300,
+    height: 850,
     margin: {
         l: 50,  
         r: 50,  
