@@ -1,7 +1,7 @@
 body {
   padding: 0;
   margin: 0;
-  background-color: lightblue;
+  background-color: rgb(153, 153, 153);
   text-align: center;
 }
 body,
@@ -9,6 +9,21 @@ body,
 html {
   height: 80%;
 }
+.title {
+  color: rgb(48, 107, 9);
+            font-size: 50px;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+}
 
-
-
+.body {
+  background-color: rgb(117, 121, 122);
+}
+.container {
+  border: 5px solid;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  transform: translate(500, 10%);
+  padding: 10px;
+}
