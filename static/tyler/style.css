@@ -1,7 +1,7 @@
 body {
   padding: 0;
   margin: 0;
-  background-color: rgb(153, 153, 153);
+  background-color: rgb(175, 221, 204);
   text-align: center;
 }
 body,
@@ -17,7 +17,7 @@ html {
 }
 
 .body {
-  background-color: rgb(117, 121, 122);
+  background-color: rgb(164, 184, 189);
 }
 .container {
   border: 5px solid;
