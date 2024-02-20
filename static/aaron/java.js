@@ -55,29 +55,7 @@ function listMaker() {
 listMaker()
 
 
-// let layers = {
-//     retailing: new L.layerGroup(),
-//     energy: new L.layerGroup(),
-//     financials: new L.layerGroup(),
-//     technology: new L.layerGroup(),
-//     motorVehiclesParts: new L.layerGroup(),
-//     foodDrugStores: new L.layerGroup(),
-//     wholesalers: new L.layerGroup(),
-//     telecommunications: new L.layerGroup(),
-//     healthCare: new L.layerGroup(),
-//     aerospaceDefense: new L.layerGroup(),
-//     householdProducts: new L.layerGroup(),
-//     foodBeveragesTobacco: new L.layerGroup(),
-//     transportation: new L.layerGroup(),
-//     chemicals: new L.layerGroup(),
-//     industrials: new L.layerGroup(),
-//     media: new L.layerGroup(),
-//     apparel: new L.layerGroup(),
-//     hotelsRestaurantsLeisure: new L.layerGroup(),
-//     materials: new L.layerGroup(),
-//     engineeringConstruction: new L.layerGroup(),
-//     businessServices: new L.layerGroup()
-// }
+
 
 
 
@@ -87,58 +65,12 @@ listMaker()
 let myMap = L.map("map", {
     center: [39.809860, -98.555183],
     zoom: 4,
-    // layers: [
-    //     layers.retailing,
-    //     layers.energy,
-    //     layers.financials,
-    //     layers.technology,
-    //     layers.motorVehiclesParts,
-    //     layers.foodDrugStores,
-    //     layers.wholesalers,
-    //     layers.telecommunications,
-    //     layers.healthCare,
-    //     layers.aerospaceDefense,
-    //     layers.householdProducts,
-    //     layers.foodBeveragesTobacco,
-    //     layers.transportation,
-    //     layers.chemicals,
-    //     layers.industrials,
-    //     layers.media,
-    //     layers.apparel,
-    //     layers.hotelsRestaurantsLeisure,
-    //     layers.materials,
-    //     layers.engineeringConstruction,
-    //     layers.businessServices
-    // ]
+ 
   });
   
 
 
-// let overlays = {
-//         'retailing':layers.retailing,
-//         'energy':layers.energy,
-//         'financials':layers.financials,
-//         'technology':layers.technology,
-//         'motorVehiclesParts':layers.motorVehiclesParts,
-//         'foodDrugStores':layers.foodDrugStores,
-//         'wholesalers':layers.wholesalers,
-//         'telecommunications':layers.telecommunications,
-//         'healthCare':layers.healthCare,
-//         'aerospaceDefense':layers.aerospaceDefense,
-//         'householdProducts':layers.householdProducts,
-//         'foodBeveragesTobacco':layers.foodBeveragesTobacco,
-//         'transportation':layers.transportation,
-//         'transportation':layers.chemicals,
-//         'industrials':layers.industrials,
-//         'media':layers.media,
-//         'apparel':layers.apparel,
-//         'hotelsRestaurantsLeisure':layers.hotelsRestaurantsLeisure,
-//         'materials':layers.materials,
-//         'engineeringConstruction':layers.engineeringConstruction,
-//         'businessServices':layers.businessServices
-// }
 
-// L.control.layers(null, overlays).addto(myMap)
 
 // Adding the tile layer
 let tile = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -147,29 +79,6 @@ let tile = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // let markers = L.markerClusterGroup();
 let markers = L.layerGroup();
-
-
-
-
-
-// myMap.addLayer(markers)
-// let info = L.control({
-//     position: "bottomright"
-//   });
-
-// info.onAdd = function() {
-//     let div = L.DomUtil.create('div','legend');
-//     return div;
-// }
-
-// info.addTo(myMap)
-
-
-
-
-
-
-
 
 
 
@@ -431,15 +340,7 @@ function addCircles(yearData) {
                 engineeringConstructionRevenue,
                 businessServicesRevenue)
             
-            // for (i=0; i < 21; i++) {
-            //     sum = 0;
-            //     for (j=0; j < 5; j++) {
-            //         sum = sum + totals[i][j];
-            //     };
-            //     console.log(sum);
-            //     console.log(`${totalsNames[i]}`);
-            //     // document.getElementById(`${totalsNames[i]}`).innerHTML = sum;
-            // }
+
 
             // retailing
             let sum = 0;
