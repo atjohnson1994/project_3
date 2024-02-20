@@ -54,6 +54,8 @@ function createList() {
 }
 createList()
 
+//Create a function to simultaneously filter and sort the data
+
 function filterAndSortBySelectedYear(data, selectedYear, maxRank) {
     function filterStocks(stock) {
         return stock.year === selectedYear && stock.rank < maxRank;
@@ -127,7 +129,29 @@ let trace1 = {
   let layout = {
     title: "Profit, Revenue, and Market Value by Company in Billions",
   width: 1800,
-  height:800
+  height:900,
+  margin: {
+    l: 125,
+    r: 100, 
+    b: 175, 
+    t: 100, 
+  }, 
+  xaxis: {
+    title: {
+        text: 'Company Name',
+    tickangle: 45,
+    standoff: 40,
+    automargin:true
+    }
+  },
+
+  yaxis: {
+    title: {
+        text:'USD in Billions $',
+        standoff: 25,
+    },
+    tickformat: '$,.2f',
+    }
   };
   
   // Render the plot to the div tag with id "plot"
@@ -173,11 +197,11 @@ let trace1 = {
 
 // Update the values of the restyled plot
 function updatePlotly(newData) {
-    Plotly.restyle("plot", "x", [newData.map(row => row.name)], [0, 1, 2]); // Update x for all traces
-    Plotly.restyle("plot", "y", [newData.map(row => row.profit_billions)], 0); // Update y for trace 1
-    Plotly.restyle("plot", "y", [newData.map(row => row.revenue_billions)], 1); // Update y for trace 2
-    Plotly.restyle("plot", "y", [newData.map(row => row.market_value_billions)], 2); // Update y for trace 3
-    Plotly.restyle("plot", "text", [newData.map(row => row.name)], [0, 1, 2]); // Update text for all traces
+    Plotly.restyle("plot", "x", [newData.map(row => row.name)], [0, 1, 2]); 
+    Plotly.restyle("plot", "y", [newData.map(row => row.profit_billions)], 0); 
+    Plotly.restyle("plot", "y", [newData.map(row => row.revenue_billions)], 1); 
+    Plotly.restyle("plot", "y", [newData.map(row => row.market_value_billions)], 2); 
+    Plotly.restyle("plot", "text", [newData.map(row => row.name)], [0, 1, 2]); 
 }
 
 init();
