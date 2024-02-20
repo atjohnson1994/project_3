@@ -7,7 +7,9 @@ body {
 body,
 #map,
 html {
-  height: 70%;
+  height: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 table, th, td {
   border: 1px solid;
