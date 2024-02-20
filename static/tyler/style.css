@@ -1,11 +1,29 @@
 body {
   padding: 0;
   margin: 0;
-  background-color: lightblue;
+  background-color: rgb(175, 221, 204);
   text-align: center;
 }
 body,
 #map,
 html {
-  height: 70%;
+  height: 80%;
+}
+.title {
+  color: rgb(48, 107, 9);
+            font-size: 50px;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+}
+
+.body {
+  background-color: rgb(164, 184, 189);
+}
+.container {
+  border: 5px solid;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  transform: translate(500, 10%);
+  padding: 10px;
 }
