@@ -1,0 +1,22 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: lightblue;
+  text-align: left;
+}
+body,
+#map,
+html {
+  height: 70%;
+}
+
+.container {
+  border: 1px solid;
+  border-collapse: collapse;
+  width: 70%;
+  text-align: center;
+  padding: 3px;
+  background-color: rgb(243, 244, 245);
+  margin-left: auto;
+  margin-right: auto;
+}
