@@ -1,5 +1,4 @@
-
-
+// arrange data in arrays
 function listMaker() {
     employees = [];
     headquarters_city = [];
@@ -35,92 +34,48 @@ function listMaker() {
         sector.push(data[i]['sector']);
         year.push(data[i]['year']);
 }
-    console.log(employees);
-    console.log(headquarters_city);
-    console.log(headquarters_state);
-    console.log(industry);
-    console.log(latitude);
-    console.log(longitude);
-    console.log(market_value_billions);
-    console.log(market_value_millions);
-    console.log(names);
-    console.log(profit_billions);
-    console.log(profit_millions);
-    console.log(rank);
-    console.log(revenue_billions);
-    console.log(revenue_millions);
-    console.log(sector);
-    console.log(year);
 }
 listMaker()
 
-
-
-
-
-
-
-
-// Creating the map object
+// Create the map object
 let myMap = L.map("map", {
     center: [39.809860, -98.555183],
     zoom: 4,
- 
   });
   
-
-
-
-
-// Adding the tile layer
+// Add the tile layer
 let tile = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(myMap);
 
-// let markers = L.markerClusterGroup();
+// initial map layer
 let markers = L.layerGroup();
 
-
-
-
-
+// drop down menu selection change
 function optionChanged(value) {
 
+    // when a new year is selected, delete the current layer
     myMap.eachLayer(function (layer) {
         if (layer !== tile)
         myMap.removeLayer(layer);
     })
-
-
-    
-
-
-
     console.log(value)
-
     yearData = [];
 
+    // push all data for the selected year to an array
     for (let i = 0; i < year.length; i++) {
-
         if (year[i] == value) {
-
             yearData.push(data[i])
         }
     }
-
-    
-
-
-
-
-
+    // update tables and maps
     addCircles(yearData)
 }
 
-
+// updates table and map for each sector (long code)
 function addCircles(yearData) {
     
-
+    // revenue lists
     retailingRevenue = [];
     energyRevenue = [];
     financialsRevenue = [];
@@ -143,6 +98,7 @@ function addCircles(yearData) {
     engineeringConstructionRevenue = [];
     businessServicesRevenue = [];
 
+    // top company lists
     let retailingWinner = [];
     let energyWinner = [];
     let financialsWinner = [];
@@ -165,18 +121,14 @@ function addCircles(yearData) {
     let engineeringConstructionWinner = [];
     let businessServicesWinner = [];
 
-
-
-
-
-
+    // create new layer
     let markers = new L.layerGroup();
 
+    // color loop
     for (let i = 0; i < yearData.length; i++) {
 
             // choose color depending on sector
             let color = '';
-
             if (yearData[i]['sector'] == 'Retailing') {
                 color = 'red';
                 retailingRevenue.push(yearData[i]['revenue_billions']);
@@ -286,37 +238,7 @@ function addCircles(yearData) {
                 color = 'snow';
             }
             
-
-
-            totalsNames = [];
-            totalsNames.push('retailingRevenue',
-                'energyRevenue',
-                'financialsRevenue',
-                'technologyRevenue',
-                'motorVehiclesPartsRevenue',
-                'foodDrugStoresRevenue',
-                'wholesalersRevenue',
-                'telecommunicationsRevenue',
-                'healthCareRevenue',
-                'aerospaceDefenseRevenue',
-                'householdProductsRevenue',
-                'foodBeveragesTobaccoRevenue',
-                'transportationRevenue',
-                'chemicalsRevenue',
-                'industrialsRevenue',
-                'mediaRevenue',
-                'apparelRevenue',
-                'hotelsRestaurantsLeisureRevenue',
-                'materialsRevenue',
-                'engineeringConstructionRevenue',
-                'businessServicesRevenue')
-
-
-
-
-
-
-            
+            // variables
             totals = [];
             totals.push(retailingRevenue,
                 energyRevenue,
@@ -340,8 +262,7 @@ function addCircles(yearData) {
                 engineeringConstructionRevenue,
                 businessServicesRevenue)
             
-
-
+            // update table
             // retailing
             let sum = 0;
             let total_sum = 0;
@@ -490,241 +411,201 @@ function addCircles(yearData) {
             businessServicesSum = sum;
             total_sum = total_sum + sum;
 
-// retailingPercentage
-retailingPercentage = (retailingSum/total_sum)*100;
-retailingPercentageRound = Math.round((retailingSum/total_sum)*100);
-document.getElementById('retailingPercentage').innerHTML = retailingPercentageRound + '%';
+                // retailingPercentage
+                retailingPercentage = (retailingSum/total_sum)*100;
+                retailingPercentageRound = Math.round((retailingSum/total_sum)*100);
+                document.getElementById('retailingPercentage').innerHTML = retailingPercentageRound + '%';
 
-// energyPercentage
-energyPercentage = (energySum/total_sum)*100;
-energyPercentageRound = Math.round((energySum/total_sum)*100);
-document.getElementById('energyPercentage').innerHTML = energyPercentageRound + '%';
+                // energyPercentage
+                energyPercentage = (energySum/total_sum)*100;
+                energyPercentageRound = Math.round((energySum/total_sum)*100);
+                document.getElementById('energyPercentage').innerHTML = energyPercentageRound + '%';
 
-// financialsPercentage
-financialsPercentage = (financialsSum/total_sum)*100;
-financialsPercentageRound = Math.round((financialsSum/total_sum)*100);
-document.getElementById('financialsPercentage').innerHTML = financialsPercentageRound + '%';
+                // financialsPercentage
+                financialsPercentage = (financialsSum/total_sum)*100;
+                financialsPercentageRound = Math.round((financialsSum/total_sum)*100);
+                document.getElementById('financialsPercentage').innerHTML = financialsPercentageRound + '%';
 
-// technologyPercentage
-technologyPercentage = (technologySum/total_sum)*100;
-technologyPercentageRound = Math.round((technologySum/total_sum)*100);
-document.getElementById('technologyPercentage').innerHTML = technologyPercentageRound + '%';
+                // technologyPercentage
+                technologyPercentage = (technologySum/total_sum)*100;
+                technologyPercentageRound = Math.round((technologySum/total_sum)*100);
+                document.getElementById('technologyPercentage').innerHTML = technologyPercentageRound + '%';
 
-// motorVehiclesPartsPercentage
-motorVehiclesPartsPercentage = (motorVehiclesPartsSum/total_sum)*100;
-motorVehiclesPartsPercentageRound = Math.round((motorVehiclesPartsSum/total_sum)*100);
-document.getElementById('motorVehiclesPartsPercentage').innerHTML = motorVehiclesPartsPercentageRound + '%';
+                // motorVehiclesPartsPercentage
+                motorVehiclesPartsPercentage = (motorVehiclesPartsSum/total_sum)*100;
+                motorVehiclesPartsPercentageRound = Math.round((motorVehiclesPartsSum/total_sum)*100);
+                document.getElementById('motorVehiclesPartsPercentage').innerHTML = motorVehiclesPartsPercentageRound + '%';
 
-// foodDrugStoresPercentage
-foodDrugStoresPercentage = (foodDrugStoresSum/total_sum)*100;
-foodDrugStoresPercentageRound = Math.round((foodDrugStoresSum/total_sum)*100);
-document.getElementById('foodDrugStoresPercentage').innerHTML = foodDrugStoresPercentageRound + '%';
+                // foodDrugStoresPercentage
+                foodDrugStoresPercentage = (foodDrugStoresSum/total_sum)*100;
+                foodDrugStoresPercentageRound = Math.round((foodDrugStoresSum/total_sum)*100);
+                document.getElementById('foodDrugStoresPercentage').innerHTML = foodDrugStoresPercentageRound + '%';
 
-// wholesalersPercentage
-wholesalersPercentage = (wholesalersSum/total_sum)*100;
-wholesalersPercentageRound = Math.round((wholesalersSum/total_sum)*100);
-document.getElementById('wholesalersPercentage').innerHTML = wholesalersPercentageRound + '%';
+                // wholesalersPercentage
+                wholesalersPercentage = (wholesalersSum/total_sum)*100;
+                wholesalersPercentageRound = Math.round((wholesalersSum/total_sum)*100);
+                document.getElementById('wholesalersPercentage').innerHTML = wholesalersPercentageRound + '%';
 
-// telecommunicationsPercentage
-telecommunicationsPercentage = (telecommunicationsSum/total_sum)*100;
-telecommunicationsPercentageRound = Math.round((telecommunicationsSum/total_sum)*100);
-document.getElementById('telecommunicationsPercentage').innerHTML = telecommunicationsPercentageRound + '%';
+                // telecommunicationsPercentage
+                telecommunicationsPercentage = (telecommunicationsSum/total_sum)*100;
+                telecommunicationsPercentageRound = Math.round((telecommunicationsSum/total_sum)*100);
+                document.getElementById('telecommunicationsPercentage').innerHTML = telecommunicationsPercentageRound + '%';
 
-// healthCarePercentage
-healthCarePercentage = (healthCareSum/total_sum)*100;
-healthCarePercentageRound = Math.round((healthCareSum/total_sum)*100);
-document.getElementById('healthCarePercentage').innerHTML = healthCarePercentageRound + '%';
+                // healthCarePercentage
+                healthCarePercentage = (healthCareSum/total_sum)*100;
+                healthCarePercentageRound = Math.round((healthCareSum/total_sum)*100);
+                document.getElementById('healthCarePercentage').innerHTML = healthCarePercentageRound + '%';
 
-// aerospaceDefensePercentage
-aerospaceDefensePercentage = (aerospaceDefenseSum/total_sum)*100;
-aerospaceDefensePercentageRound = Math.round((aerospaceDefenseSum/total_sum)*100);
-document.getElementById('aerospaceDefensePercentage').innerHTML = aerospaceDefensePercentageRound + '%';
+                // aerospaceDefensePercentage
+                aerospaceDefensePercentage = (aerospaceDefenseSum/total_sum)*100;
+                aerospaceDefensePercentageRound = Math.round((aerospaceDefenseSum/total_sum)*100);
+                document.getElementById('aerospaceDefensePercentage').innerHTML = aerospaceDefensePercentageRound + '%';
 
-// householdProductsPercentage
-householdProductsPercentage = (householdProductsSum/total_sum)*100;
-householdProductsPercentageRound = Math.round((householdProductsSum/total_sum)*100);
-document.getElementById('householdProductsPercentage').innerHTML = householdProductsPercentageRound + '%';
+                // householdProductsPercentage
+                householdProductsPercentage = (householdProductsSum/total_sum)*100;
+                householdProductsPercentageRound = Math.round((householdProductsSum/total_sum)*100);
+                document.getElementById('householdProductsPercentage').innerHTML = householdProductsPercentageRound + '%';
 
-// foodBeveragesTobaccoPercentage
-foodBeveragesTobaccoPercentage = (foodBeveragesTobaccoSum/total_sum)*100;
-foodBeveragesTobaccoPercentageRound = Math.round((foodBeveragesTobaccoSum/total_sum)*100);
-document.getElementById('foodBeveragesTobaccoPercentage').innerHTML = foodBeveragesTobaccoPercentageRound + '%';
+                // foodBeveragesTobaccoPercentage
+                foodBeveragesTobaccoPercentage = (foodBeveragesTobaccoSum/total_sum)*100;
+                foodBeveragesTobaccoPercentageRound = Math.round((foodBeveragesTobaccoSum/total_sum)*100);
+                document.getElementById('foodBeveragesTobaccoPercentage').innerHTML = foodBeveragesTobaccoPercentageRound + '%';
 
-// transportationPercentage
-transportationPercentage = (transportationSum/total_sum)*100;
-transportationPercentageRound = Math.round((transportationSum/total_sum)*100);
-document.getElementById('transportationPercentage').innerHTML = transportationPercentageRound + '%';
+                // transportationPercentage
+                transportationPercentage = (transportationSum/total_sum)*100;
+                transportationPercentageRound = Math.round((transportationSum/total_sum)*100);
+                document.getElementById('transportationPercentage').innerHTML = transportationPercentageRound + '%';
 
-// chemicalsPercentage
-chemicalsPercentage = (chemicalsSum/total_sum)*100;
-chemicalsPercentageRound = Math.round((chemicalsSum/total_sum)*100);
-document.getElementById('chemicalsPercentage').innerHTML = chemicalsPercentageRound + '%';
+                // chemicalsPercentage
+                chemicalsPercentage = (chemicalsSum/total_sum)*100;
+                chemicalsPercentageRound = Math.round((chemicalsSum/total_sum)*100);
+                document.getElementById('chemicalsPercentage').innerHTML = chemicalsPercentageRound + '%';
 
-// industrialsPercentage
-industrialsPercentage = (industrialsSum/total_sum)*100;
-industrialsPercentageRound = Math.round((industrialsSum/total_sum)*100);
-document.getElementById('industrialsPercentage').innerHTML = industrialsPercentageRound + '%';
+                // industrialsPercentage
+                industrialsPercentage = (industrialsSum/total_sum)*100;
+                industrialsPercentageRound = Math.round((industrialsSum/total_sum)*100);
+                document.getElementById('industrialsPercentage').innerHTML = industrialsPercentageRound + '%';
 
-// mediaPercentage
-mediaPercentage = (mediaSum/total_sum)*100;
-mediaPercentageRound = Math.round((mediaSum/total_sum)*100);
-document.getElementById('mediaPercentage').innerHTML = mediaPercentageRound + '%';
+                // mediaPercentage
+                mediaPercentage = (mediaSum/total_sum)*100;
+                mediaPercentageRound = Math.round((mediaSum/total_sum)*100);
+                document.getElementById('mediaPercentage').innerHTML = mediaPercentageRound + '%';
 
-// apparelPercentage
-apparelPercentage = (apparelSum/total_sum)*100;
-apparelPercentageRound = Math.round((apparelSum/total_sum)*100);
-document.getElementById('apparelPercentage').innerHTML = apparelPercentageRound + '%';
+                // apparelPercentage
+                apparelPercentage = (apparelSum/total_sum)*100;
+                apparelPercentageRound = Math.round((apparelSum/total_sum)*100);
+                document.getElementById('apparelPercentage').innerHTML = apparelPercentageRound + '%';
 
-// hotelsRestaurantsLeisurePercentage
-hotelsRestaurantsLeisurePercentage = (hotelsRestaurantsLeisureSum/total_sum)*100;
-hotelsRestaurantsLeisurePercentageRound = Math.round((hotelsRestaurantsLeisureSum/total_sum)*100);
-document.getElementById('hotelsRestaurantsLeisurePercentage').innerHTML = hotelsRestaurantsLeisurePercentageRound + '%';
+                // hotelsRestaurantsLeisurePercentage
+                hotelsRestaurantsLeisurePercentage = (hotelsRestaurantsLeisureSum/total_sum)*100;
+                hotelsRestaurantsLeisurePercentageRound = Math.round((hotelsRestaurantsLeisureSum/total_sum)*100);
+                document.getElementById('hotelsRestaurantsLeisurePercentage').innerHTML = hotelsRestaurantsLeisurePercentageRound + '%';
 
-// materialsPercentage
-materialsPercentage = (materialsSum/total_sum)*100;
-materialsPercentageRound = Math.round((materialsSum/total_sum)*100);
-document.getElementById('materialsPercentage').innerHTML = materialsPercentageRound + '%';
+                // materialsPercentage
+                materialsPercentage = (materialsSum/total_sum)*100;
+                materialsPercentageRound = Math.round((materialsSum/total_sum)*100);
+                document.getElementById('materialsPercentage').innerHTML = materialsPercentageRound + '%';
 
-// engineeringConstructionPercentage
-engineeringConstructionPercentage = (engineeringConstructionSum/total_sum)*100;
-engineeringConstructionPercentageRound = Math.round((engineeringConstructionSum/total_sum)*100);
-document.getElementById('engineeringConstructionPercentage').innerHTML = engineeringConstructionPercentageRound + '%';
+                // engineeringConstructionPercentage
+                engineeringConstructionPercentage = (engineeringConstructionSum/total_sum)*100;
+                engineeringConstructionPercentageRound = Math.round((engineeringConstructionSum/total_sum)*100);
+                document.getElementById('engineeringConstructionPercentage').innerHTML = engineeringConstructionPercentageRound + '%';
 
-// businessServicesPercentage
-businessServicesPercentage = (businessServicesSum/total_sum)*100;
-businessServicesPercentageRound = Math.round((businessServicesSum/total_sum)*100);
-document.getElementById('businessServicesPercentage').innerHTML = businessServicesPercentageRound + '%';
+                // businessServicesPercentage
+                businessServicesPercentage = (businessServicesSum/total_sum)*100;
+                businessServicesPercentageRound = Math.round((businessServicesSum/total_sum)*100);
+                document.getElementById('businessServicesPercentage').innerHTML = businessServicesPercentageRound + '%';
 
+                // variables
+                ranks = rankings([retailingPercentage,
+                energyPercentage,
+                financialsPercentage,
+                technologyPercentage,
+                motorVehiclesPartsPercentage,
+                foodDrugStoresPercentage,
+                wholesalersPercentage,
+                telecommunicationsPercentage,
+                healthCarePercentage,
+                aerospaceDefensePercentage,
+                householdProductsPercentage,
+                foodBeveragesTobaccoPercentage,
+                transportationPercentage,
+                chemicalsPercentage,
+                industrialsPercentage,
+                mediaPercentage,
+                apparelPercentage,
+                hotelsRestaurantsLeisurePercentage,
+                materialsPercentage,
+                engineeringConstructionRevenue,
+                businessServicesRevenue])
 
+                // update table with sector ranks
+                document.getElementById('retailingRank').innerHTML = ranks[0];
+                document.getElementById('energyRank').innerHTML = ranks[1];
+                document.getElementById('financialsRank').innerHTML = ranks[2];
+                document.getElementById('technologyRank').innerHTML = ranks[3];
+                document.getElementById('motorVehiclesPartsRank').innerHTML = ranks[4];
+                document.getElementById('foodDrugStoresRank').innerHTML = ranks[5];
+                document.getElementById('wholesalersRank').innerHTML = ranks[6];
+                document.getElementById('telecommunicationsRank').innerHTML = ranks[7];
+                document.getElementById('healthCareRank').innerHTML = ranks[8];
+                document.getElementById('aerospaceDefenseRank').innerHTML = ranks[9];
+                document.getElementById('householdProductsRank').innerHTML = ranks[10];
+                document.getElementById('foodBeveragesTobaccoRank').innerHTML = ranks[11];
+                document.getElementById('transportationRank').innerHTML = ranks[12];
+                document.getElementById('chemicalsRank').innerHTML = ranks[13];
+                document.getElementById('industrialsRank').innerHTML = ranks[14];
+                document.getElementById('mediaRank').innerHTML = ranks[15];
+                document.getElementById('apparelRank').innerHTML = ranks[16];
+                document.getElementById('hotelsRestaurantsLeisureRank').innerHTML = ranks[17];
+                document.getElementById('materialsRank').innerHTML = ranks[18];
+                document.getElementById('engineeringConstructionRank').innerHTML = ranks[19];
+                document.getElementById('businessServicesRank').innerHTML = ranks[20];
 
-
-
-
-ranks = rankings([retailingPercentage,
-    energyPercentage,
-    financialsPercentage,
-    technologyPercentage,
-    motorVehiclesPartsPercentage,
-    foodDrugStoresPercentage,
-    wholesalersPercentage,
-    telecommunicationsPercentage,
-    healthCarePercentage,
-    aerospaceDefensePercentage,
-    householdProductsPercentage,
-    foodBeveragesTobaccoPercentage,
-    transportationPercentage,
-    chemicalsPercentage,
-    industrialsPercentage,
-    mediaPercentage,
-    apparelPercentage,
-    hotelsRestaurantsLeisurePercentage,
-    materialsPercentage,
-    engineeringConstructionRevenue,
-    businessServicesRevenue])
-
-document.getElementById('retailingRank').innerHTML = ranks[0];
-document.getElementById('energyRank').innerHTML = ranks[1];
-document.getElementById('financialsRank').innerHTML = ranks[2];
-document.getElementById('technologyRank').innerHTML = ranks[3];
-document.getElementById('motorVehiclesPartsRank').innerHTML = ranks[4];
-document.getElementById('foodDrugStoresRank').innerHTML = ranks[5];
-document.getElementById('wholesalersRank').innerHTML = ranks[6];
-document.getElementById('telecommunicationsRank').innerHTML = ranks[7];
-document.getElementById('healthCareRank').innerHTML = ranks[8];
-document.getElementById('aerospaceDefenseRank').innerHTML = ranks[9];
-document.getElementById('householdProductsRank').innerHTML = ranks[10];
-document.getElementById('foodBeveragesTobaccoRank').innerHTML = ranks[11];
-document.getElementById('transportationRank').innerHTML = ranks[12];
-document.getElementById('chemicalsRank').innerHTML = ranks[13];
-document.getElementById('industrialsRank').innerHTML = ranks[14];
-document.getElementById('mediaRank').innerHTML = ranks[15];
-document.getElementById('apparelRank').innerHTML = ranks[16];
-document.getElementById('hotelsRestaurantsLeisureRank').innerHTML = ranks[17];
-document.getElementById('materialsRank').innerHTML = ranks[18];
-document.getElementById('engineeringConstructionRank').innerHTML = ranks[19];
-document.getElementById('businessServicesRank').innerHTML = ranks[20];
-
-document.getElementById('retailingWinner').innerHTML = retailingWinner[0];
-document.getElementById('energyWinner').innerHTML = energyWinner[0];
-document.getElementById('financialsWinner').innerHTML = financialsWinner[0];
-document.getElementById('technologyWinner').innerHTML = technologyWinner[0];
-document.getElementById('motorVehiclesPartsWinner').innerHTML = motorVehiclesPartsWinner[0];
-document.getElementById('foodDrugStoresWinner').innerHTML = foodDrugStoresWinner[0];
-document.getElementById('wholesalersWinner').innerHTML = wholesalersWinner[0];
-document.getElementById('telecommunicationsWinner').innerHTML = telecommunicationsWinner[0];
-document.getElementById('healthCareWinner').innerHTML = healthCareWinner[0];
-document.getElementById('aerospaceDefenseWinner').innerHTML = aerospaceDefenseWinner[0];
-document.getElementById('householdProductsWinner').innerHTML = householdProductsWinner[0];
-document.getElementById('foodBeveragesTobaccoWinner').innerHTML = foodBeveragesTobaccoWinner[0];
-document.getElementById('transportationWinner').innerHTML = transportationWinner[0];
-document.getElementById('chemicalsWinner').innerHTML = chemicalsWinner[0];
-document.getElementById('industrialsWinner').innerHTML = industrialsWinner[0];
-document.getElementById('mediaWinner').innerHTML = mediaWinner[0];
-document.getElementById('apparelWinner').innerHTML = apparelWinner[0];
-document.getElementById('hotelsRestaurantsLeisureWinner').innerHTML = hotelsRestaurantsLeisureWinner[0];
-document.getElementById('materialsWinner').innerHTML = materialsWinner[0];
-document.getElementById('engineeringConstructionWinner').innerHTML = engineeringConstructionWinner[0];
-document.getElementById('businessServicesWinner').innerHTML = businessServicesWinner[0];
+                // update table with highest earning company
+                document.getElementById('retailingWinner').innerHTML = retailingWinner[0];
+                document.getElementById('energyWinner').innerHTML = energyWinner[0];
+                document.getElementById('financialsWinner').innerHTML = financialsWinner[0];
+                document.getElementById('technologyWinner').innerHTML = technologyWinner[0];
+                document.getElementById('motorVehiclesPartsWinner').innerHTML = motorVehiclesPartsWinner[0];
+                document.getElementById('foodDrugStoresWinner').innerHTML = foodDrugStoresWinner[0];
+                document.getElementById('wholesalersWinner').innerHTML = wholesalersWinner[0];
+                document.getElementById('telecommunicationsWinner').innerHTML = telecommunicationsWinner[0];
+                document.getElementById('healthCareWinner').innerHTML = healthCareWinner[0];
+                document.getElementById('aerospaceDefenseWinner').innerHTML = aerospaceDefenseWinner[0];
+                document.getElementById('householdProductsWinner').innerHTML = householdProductsWinner[0];
+                document.getElementById('foodBeveragesTobaccoWinner').innerHTML = foodBeveragesTobaccoWinner[0];
+                document.getElementById('transportationWinner').innerHTML = transportationWinner[0];
+                document.getElementById('chemicalsWinner').innerHTML = chemicalsWinner[0];
+                document.getElementById('industrialsWinner').innerHTML = industrialsWinner[0];
+                document.getElementById('mediaWinner').innerHTML = mediaWinner[0];
+                document.getElementById('apparelWinner').innerHTML = apparelWinner[0];
+                document.getElementById('hotelsRestaurantsLeisureWinner').innerHTML = hotelsRestaurantsLeisureWinner[0];
+                document.getElementById('materialsWinner').innerHTML = materialsWinner[0];
+                document.getElementById('engineeringConstructionWinner').innerHTML = engineeringConstructionWinner[0];
+                document.getElementById('businessServicesWinner').innerHTML = businessServicesWinner[0];
 
 
 
             markers.addLayer(L.circle([yearData[i]['latitude'], yearData[i]['longitude']],
             {radius: yearData[i]['revenue_millions'],
             color: 'black',
-        fillColor: color,
-        weight: 0.2,
-        fillOpacity: 0.7}))
-
-        
-
-
-
-    // L.circle([yearData[i]['latitude'], yearData[i]['longitude']],
-    //     {radius: yearData[i]['revenue_millions'],
-    //     color: 'black',
-    // fillColor: color,
-    // weight: 0.2,
-    // fillOpacity: 0.7}).addTo(myMap)
-
-
+            fillColor: color,
+            weight: 0.2,
+            fillOpacity: 0.7}
+            ).bindPopup(`<h1>${yearData[i]['name']}</h1> 
+            <h3>${yearData[i]['headquarters_city']}, ${yearData[i]['headquarters_state']}</h3> <hr>
+            <h3>Revenue in Billions: $${yearData[i]['revenue_billions']}</h3>
+            <h3>Sector: ${yearData[i]['sector']}</h3>
+            <h3>Employees in Thousands: ${(yearData[i]['employees'] / 1000)}</h3>`)
+            )
 }
 myMap.addLayer(markers)
 
-
-
-
-// let info = L.control({
-//     position: "bottomright"
-//   });
-
-// info.onAdd = function() {
-//     let div = L.DomUtil.create('div','legend');
-//     return div;
-// }
-
-// document.querySelector('.legend').innerHTML = [
-//     "<p class='retailing'>Retailing</p>",
-// ]
-// info.addTo(myMap)
-
-
-
-
-
 }
-
-
-
-
-
-function rankings(arr){
-    // add whatever parameters you deem necessary....good luck! 
+// ranking function
+function rankings(arr){ 
     var sorted = arr.slice().sort(function(a,b){return b-a})
     var ranks = arr.slice().map(function(v){ return sorted.indexOf(v) + 1});
     return ranks;
   }
-  
-  rankings([10, 5, 20]); // [2, 3, 1]
-
-
-
