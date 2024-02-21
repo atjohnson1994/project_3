@@ -3,10 +3,10 @@
 
 # instructions
 - To view the data visualizations. Simply click this link: https://atjohnson1994.github.io/project_3/ 
--There are three interactive visualizations to choose from. Each visualization shows a different aspect of the dataset.
+- There are three interactive visualizations to choose from. Each visualization shows a different aspect of the dataset.
 
 # ethical considerations
-- All data utilized in this project was from publicly traded companies. 
+- All data utilized in this project was from publicly traded companies.
 
 # data source
 - Data for this project was downloaded from Kaggle.
