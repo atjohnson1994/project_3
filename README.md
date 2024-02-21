@@ -9,7 +9,7 @@
 - There are three interactive visualizations to choose from. Each visualization shows a different aspect of the dataset.
 
 # ethical considerations
-- All data utilized in this project was from publicly traded companies.
+- All data utilized in this project was from publicly traded companies. We ensured that we mainted full compliance with the terms of use for this data. We ran a spot check to validate the earnings and values reported in this data in order to confirm it's integrity.
 
 # data source
 - Data for this project was downloaded from Kaggle.
