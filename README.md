@@ -13,6 +13,3 @@
 
 # data source
 - Data for this project was downloaded from Kaggle.
-
-# to launch visualizations
-- Open the pages tab in github and toggle the drop down menu to look through the differnt visualizations 
